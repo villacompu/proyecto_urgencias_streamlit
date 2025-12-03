@@ -10,7 +10,7 @@ La interfaz incluye:
 - Tarjetas visuales con animaciones  
 - Cálculo de probabilidad  
 - Dashboard interactivo  
-- Explicabilidad del modelo con gráficos SHAP  
+- Explicabilidad del modelo  
 
 ---
 
