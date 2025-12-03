@@ -1,4 +1,5 @@
-📘 README.md (ES/EN) — Versión Simple y Ajustada a tu Proyecto
+📘 README.md (ES/EN) 
+
 # 🏥 Predicción de Permanencia en Urgencias  
 Aplicación web desarrollada en **Streamlit** que utiliza un modelo de Machine Learning para predecir si un paciente:
 - Permanece en urgencias  
