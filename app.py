@@ -18,7 +18,7 @@ map_regimen = {
     "Otro": 5
 }
 
-map_triaje = {"I": 0, "II": 1, "III": 2, "IV": 3, "V": 4}
+map_triaje = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5}
 
 map_urgencia_xpress = {"Sí": 1, "No": 0}
 
@@ -121,6 +121,12 @@ st.image("https://almamater.hospital/wp-content/uploads/2023/03/logo-hospital-al
 # DISEÑO Y POWER BI EMBED
 # -----------------------------------------------------
 
+Presentacion_iframe = """
+<iframe title="Indicadores fichas de caracterización priorizados" width="100%" height="600"
+src="https://prediccion-de-permanenci-tknmyt4.gamma.site/"
+frameborder="0" allowFullScreen="true"></iframe>
+"""
+components.html(Presentacion_iframe, height=650, scrolling=True)
 
 st.markdown('<div class="title">📈 Indicadores - Power BI integrado</div>', unsafe_allow_html=True)
 st.markdown(
@@ -134,18 +140,15 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ---- Power BI iframe (incrustado arriba) ----
-
-
 powerbi_iframe = """
 <iframe title="Indicadores fichas de caracterización priorizados" width="100%" height="600"
 src="https://app.powerbi.com/view?r=eyJrIjoiMGI5ZTVlNTQtNTczMS00NTg1LWE1OGQtY2ZjMGVlMjZjMDUxIiwidCI6IjQ3MDJjZWJlLWI0ZDgtNGI4Mi04NGVkLTdkMmNjMmU5ZGY1OCJ9"
 frameborder="0" allowFullScreen="true"></iframe>
 """
 
-
 # use components.html to render full-width iframe
-components.html(powerbi_iframe, height=600, scrolling=True)
+
+components.html(powerbi_iframe, height=650, scrolling=True)
 
 st.markdown('<div class="title">🩺 Predicción de permanencia en Urgencias</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Ingresa los datos del paciente (todos los selects mapean a valores numéricos)</div>', unsafe_allow_html=True)
@@ -278,9 +281,8 @@ if ejecutar:
             )
         else:
             st.write(
-                "- Acompañar el alta con indicaciones de control y signos de alarma.\n"
-                "- Se recomienda otorgar el alta con instrucciones de seguimiento.\n"
-                "- En caso necesario, el médico puede decidir la hospitalización."
+                "- Se recomienda alta con instrucciones de seguimiento.\n"
+                "- Acompañar alta con indicaciones de control y signos de alarma."
             )
 
         # botón para exportar resultado como CSV (descarga)
@@ -327,6 +329,6 @@ with colB:
     st.metric("Tipo de modelo", "HistGradientBoostingClassifier")
 
 with colC:
-    st.metric("Clasificación", "Binaria (1 = Alta, 0 = Permanece)")
+    st.metric("Clasificación", "Binaria (0 = Alta, 1 = Permanece)")
 
     
